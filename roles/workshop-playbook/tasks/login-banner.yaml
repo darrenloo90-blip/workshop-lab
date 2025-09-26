@@ -7,7 +7,7 @@
       #                                                   #\n
       #     You have successfully entered this system     #\n
       #                                                   #\n
-      #     contact admin at xxxx@gmail.com               #\n
+      #     contact admin at darren                       #\n
       #####################################################
       " 
     state: present
