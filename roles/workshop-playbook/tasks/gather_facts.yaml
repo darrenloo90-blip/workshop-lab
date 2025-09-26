@@ -1,0 +1,11 @@
+---
+- name: gather basic device facts
+  host: your_ios_device_group
+  gather_facts: no
+  tasks:
+    - name: Collect all IOS facts
+      cisco.ios.ios.facts:
+        gather_subset: all
+    - name: print hostname
+      ansible.builtin.debug:
+        msg: "{{ ansible_net_hostname }}"
