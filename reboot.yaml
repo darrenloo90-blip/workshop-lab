@@ -4,15 +4,19 @@
   host: localhost
   gather_facts: false
   tasks:
-    - name: Add hosts to critical memory
-      add_host:
-        name: item
-        groups: critical_inventory
-        gather_facts: false
-    - name: reboot routers
-      become: yes
-      vars:
-        ansible_command_timeout: 10
+  - name: Add hosts to critical memory
+    add_host:
+      name: item
+      groups: critical_inventory
+      gather_facts: false
+    
+- name: reboot routers
+  host: critical_inventory
+  become: yes
+  vars:
+    ansible_command_timeout: 10
+  tasks:
+    - name: Reload
       cisco.ios.ios_command:
         commands:
           - command: "reload"
@@ -22,4 +26,4 @@
             answer:
               - "yes"
               - "\n"
-      regsiter: reload_output          
+      register: reload_output          
