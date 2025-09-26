@@ -22,7 +22,7 @@
     - hardware_facts.ansible_facts.ansible_cpu_utilisation is defined
     - hardware_facts.ansible_facts.ansible_cpu_utilisation.core.five_seconds < cpu_limit
   set_fact:
-    cpu_pass: "true"
+    cpu_pass: 'true'
 
 - name: Create stat of hosts to add to critical_inventory
   when: not cpu_pass
