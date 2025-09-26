@@ -15,6 +15,6 @@
 
 - name: Save to config
   cisco.ios.ios_config:
-    save when: always
+    save_when: always
 
 
