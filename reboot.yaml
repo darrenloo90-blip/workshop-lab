@@ -1,7 +1,7 @@
 ---
 
 - name: create dynamic inventory to critical memory
-  host: localhost
+  hosts: localhost
   gather_facts: false
   tasks:
   - name: Add hosts to critical memory
@@ -11,7 +11,7 @@
       gather_facts: false
     
 - name: reboot routers
-  host: critical_inventory
+  hosts: critical_inventory
   become: yes
   vars:
     ansible_command_timeout: 10
