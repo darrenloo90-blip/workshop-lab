@@ -1,11 +1,34 @@
 ---
-- name: health check workflow
+#- name: health check workflow
+#  cisco.ios.ios_facts:
+#    gather_subset: all
+#- name: print hostname
+#  debug:
+#    msg: 
+#    - "{{ ansible_net_cpu_utilization }}"
+  
+- name: intialize vars
+  set_facts:
+    cpu_pass: "{{ cpu_pass | default('false') }}"
+
+- name: Gather facts on hardware
   cisco.ios.ios_facts:
-    gather_subset: all
-- name: print hostname
-  debug:
-    msg: 
-    - "{{ ansible_net_cpu_utilization }}"
-  
-  
+    gather_subset: hardware
+    register: hardware_facts
+
+- name: CPU utilisation check
+  when:
+    - hardware_facts.ansible_facts.ansible_cpu_utilisation is defined
+    - hardware_facts.ansible_facts.ansible_cpu_utilisation.core.five_seconds < cpu_limit
+  set_facts:
+    cpu_pass: "true"
+
+- name: Create stat of hosts to add to critical_inventory
+  when: not cpu_pass
+  set_stats:
+    data:
+      hosts_to_add: "{{ hosts_to_add | default[]) + [item] }}"
+    with_items:
+      - "{{ inventory_hostname }}"
+
   

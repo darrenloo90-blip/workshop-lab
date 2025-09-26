@@ -13,3 +13,6 @@
 
 - name: "Task 5: Health check"
   import_tasks: health-check.yaml
+
+- name: "Task 6: Reboot critical hosts"
+  import_tasks: reboot.yaml

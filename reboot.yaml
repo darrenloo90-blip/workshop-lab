@@ -1,0 +1,26 @@
+---
+
+- name: create dynamic inventory to critical memory
+  host: localhost
+  gather_facts: false
+  tasks:
+    - name: Add hosts to critical memory
+      add_host:
+        name: item
+        groups: critical_inventory
+        gather_facts: false
+        tasks:
+          - name: reboot routers
+            become: yes
+            vars:
+              ansible_command_timeout: 10
+            cisco.ios.ios_command:
+              commands:
+                - command: "reload"
+                  prompt:
+                    - "Save system"
+                    - "Proceed with reload"
+                  answer:
+                    - "yes"
+                    - "\n"
+            regsiter: reload_output
