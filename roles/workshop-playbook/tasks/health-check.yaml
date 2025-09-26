@@ -28,8 +28,8 @@
   when: not cpu_pass
   set_stats:
     data:
-      hosts_to_add: "{{ hosts_to_add | default([]) + [item] }}"
-    with_items:
-      - "{{ inventory_hostname }}"
+      hosts_to_add: "{{ hosts_to_add | default([]) + [inventory_hostname] }}"
+  # with_items:
+  #   - "{{ inventory_hostname }}"
 
   
