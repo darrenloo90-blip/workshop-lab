@@ -8,7 +8,7 @@
       #                                                   #\n
       #     You have successfully entered this system     #\n
       #                                                   #\n
-      #     contact admin at darren                       #\n
+      #     contact admin at darren@hotmail.com           #\n
       #####################################################
       " 
     state: present
