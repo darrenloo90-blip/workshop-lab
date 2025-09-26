@@ -1,7 +1,7 @@
 ---
 - name: Workshop test
   hosts: cisco
-  gather_facts: false
+  gather_facts: true
   vars_files:
   - "group_vars/all.yml"
   roles:
