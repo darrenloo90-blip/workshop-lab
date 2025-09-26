@@ -1,6 +1,6 @@
 ---
 - name: Collect all IOS facts
-  cisco.ios.ios.facts:
+  cisco.ios.ios_facts:
     gather_subset: all
 - name: print hostname
   ansible.builtin.debug:
