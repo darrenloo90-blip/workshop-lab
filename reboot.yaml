@@ -10,7 +10,7 @@
       groups: critical_inventory
       gather_facts: false
     loop: hosts_to_add
-    
+
 - name: reboot routers
   hosts: critical_inventory
   become: yes
