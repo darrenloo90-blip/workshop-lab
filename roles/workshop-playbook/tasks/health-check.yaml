@@ -15,7 +15,7 @@
   cisco.ios.ios_facts:
     gather_subset: 
       - "hardware"
-    register: hardware_facts
+  register: hardware_facts
 
 - name: CPU utilisation check
   when:
