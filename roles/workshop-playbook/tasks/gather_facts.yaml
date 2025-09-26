@@ -4,5 +4,5 @@
     gather_subset: all
 - name: print hostname
   ansible.builtin.debug:
-    msg: "{{ ansible_net_hostname }} \n{{ ansible_net_version }}"
+    msg: "{{ ansible_net_hostname }} \n{{ ansible_net_version }} \n{{ ansible_net_model }}"
     
