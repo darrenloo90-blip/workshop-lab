@@ -8,7 +8,6 @@
     add_host:
       name: item
       groups: critical_inventory
-      gather_facts: false
     loop: hosts_to_add
 
 - name: reboot routers
