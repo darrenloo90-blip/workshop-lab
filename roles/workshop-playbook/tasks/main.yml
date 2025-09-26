@@ -5,5 +5,11 @@
 #- name: "Task 2: Set login banner"
 #  import_tasks: login-banner.yaml
 
-- name: "Task 3: Configure SNMP"
-  import_tasks: configure-snmp.yaml
+#- name: "Task 3: Configure SNMP"
+#  import_tasks: configure-snmp.yaml
+
+#- name: "Task 4: Create account"
+#  import_tasks: account-creation.yaml
+
+- name: "Task 5: Health check"
+  import_tasks: health-check.yaml

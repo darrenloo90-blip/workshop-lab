@@ -1,0 +1,11 @@
+---
+- name: health check workflow
+  cisco.ios.ios_facts:
+  gather_subset: all
+- name: print hostname
+  debug:
+    msg: 
+    - "{{ ansible_net_cpu_utilization }}"
+  
+  
+  

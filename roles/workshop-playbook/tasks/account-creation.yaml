@@ -1,0 +1,7 @@
+---
+- name: acount creation
+  cisco.ios.ios_user:
+  name: ansible
+    nopassword: true
+    sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+    state: present
