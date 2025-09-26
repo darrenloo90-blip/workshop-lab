@@ -3,6 +3,9 @@
   cisco.ios.ios_facts:
     gather_subset: all
 - name: print hostname
-  ansible.builtin.debug:
-    msg: "{{ ansible_net_hostname }} \n{{ ansible_net_version }} \n{{ ansible_net_model }}"
+  debug:
+    msg: 
+    - "{{ ansible_net_hostname }}"
+    - "{{ ansible_net_version }}"
+    - "{{ ansible_net_model }}"
     
