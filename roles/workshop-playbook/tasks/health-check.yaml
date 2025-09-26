@@ -1,7 +1,7 @@
 ---
 - name: health check workflow
   cisco.ios.ios_facts:
-    gather_subset: all
+    gather_subset: min
 - name: print hostname
   debug:
     msg: 
